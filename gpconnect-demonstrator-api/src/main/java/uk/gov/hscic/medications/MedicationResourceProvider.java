@@ -47,7 +47,7 @@ public class MedicationResourceProvider implements IResourceProvider {
 
     @Read()
     public Medication getMedicationById(@IdParam IdType medicationId) {
-        MedicationEntity medicationEntity = medicationRepository.findOne(medicationId.getIdPartAsLong());
+        MedicationEntity medicationEntity = medicationRepository.findById(medicationId.getIdPartAsLong()).get();
 
         if (medicationEntity == null) {
             OperationOutcome operationalOutcome = new OperationOutcome();
@@ -70,7 +70,7 @@ public class MedicationResourceProvider implements IResourceProvider {
     
     public Medication getMedicationResourceForBundle(Long medicationId) {
 		MedicationDetail medicationDetail = medicationEntityToDetailTransformer
-				.transform(medicationRepository.findOne(medicationId));
+				.transform(medicationRepository.findById(medicationId).get());
 		
 		Medication medication = new Medication();
 		

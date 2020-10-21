@@ -17,11 +17,11 @@ package uk.gov.hscic.patient.details;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-public interface PatientRepository extends JpaRepository<PatientEntity, Long>, QueryDslPredicateExecutor<PatientEntity> {
+public interface PatientRepository extends JpaRepository<PatientEntity, Long>, QuerydslPredicateExecutor<PatientEntity> {
     PatientEntity findByNhsNumber(String nhsNumber);
-    PatientEntity findById(Long id);
+    //PatientEntity findById(Long id);
 
     // TODO there's a harcoded schema name here not sure it can be easily removed though
     @Query(value="SELECT p.id FROM gpconnect1_5.patients p WHERE p.nhs_number = ?1", nativeQuery = true)

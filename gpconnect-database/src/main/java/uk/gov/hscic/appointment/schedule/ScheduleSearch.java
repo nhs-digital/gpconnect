@@ -15,7 +15,7 @@ public class ScheduleSearch {
     private ScheduleRepository scheduleRepository;
 
     public ScheduleDetail findScheduleByID(Long id) {
-        final ScheduleEntity item = scheduleRepository.findOne(id);
+        final ScheduleEntity item = scheduleRepository.findById(id).get();
 
         return item == null
                 ? null

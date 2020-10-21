@@ -33,4 +33,19 @@ node_modules
 # Config #
 context-gpconnect.xml
 /bin/
+/config/gpconnect-demonstrator-api.environment.properties
+/mygitpush.sh
+/mygitcommit.sh
 /gpconnect-demonstrator-api/src/main/resources/application.properties
+/start_gpconnect.sh
+/start_gpconnect.cmd
+/config/opentest_with_client.jks
+/config/vpn-client-1003.opentest.hscic.gov.uk.jks
+devnet.sh
+start_stack.sh
+config/external/
+Dockerfile.local
+gpconnect-demonstrator-api.war
+docker_build.sh
+start_gpconnect_docker.sh
+cmd.exe.lnk

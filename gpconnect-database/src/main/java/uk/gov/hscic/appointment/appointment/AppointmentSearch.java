@@ -17,7 +17,7 @@ public class AppointmentSearch {
     private AppointmentRepository appointmentRepository;
 
     public AppointmentDetail findAppointmentByID(Long id) {
-        final AppointmentEntity item = appointmentRepository.findOne(id);
+        final AppointmentEntity item = appointmentRepository.findById(id).get();
 
         return item == null
                 ? null

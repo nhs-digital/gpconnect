@@ -21,7 +21,7 @@ public class SlotSearch {
      * @return SlotDetail
      */
     public SlotDetail findSlotByID(Long id) {
-        final SlotEntity item = slotRepository.findOne(id);
+        final SlotEntity item = slotRepository.findById(id).get();
 
         return item == null
                 ? null

@@ -14,7 +14,7 @@ public class OrganizationSearch {
     private OrganizationRepository organizationRepository;
 
     public OrganizationDetails findOrganizationDetails(final Long organizationId) {
-        final OrganizationEntity item = organizationRepository.findOne(organizationId);
+        final OrganizationEntity item = organizationRepository.findById(organizationId).get();
 
         return item == null
                 ? null

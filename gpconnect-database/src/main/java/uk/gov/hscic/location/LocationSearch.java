@@ -22,7 +22,7 @@ public class LocationSearch {
 
         final LocationEntity item;
         try {
-            item = locationRepository.findOne(Long.parseLong(locationId));
+            item = locationRepository.findById(Long.parseLong(locationId)).get();
         } catch (NumberFormatException e) {
             return null;
         }

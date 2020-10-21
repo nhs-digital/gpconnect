@@ -33,7 +33,7 @@ public class MedicationRequestResourceProvider {
 
     public MedicationRequest getMedicationRequestPlanResource(String medicationRequestId) {
         MedicationRequestDetail requestDetail = medicationRequestEntityToDetailTransformer
-                .transform(medicationRequestRepository.findOne(Long.parseLong(medicationRequestId)));
+                .transform(medicationRequestRepository.findById(Long.parseLong(medicationRequestId)).get());
 
         MedicationRequest medicationRequest = getMedicationRequestFromDetail(requestDetail);
 
